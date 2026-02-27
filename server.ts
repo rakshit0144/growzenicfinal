@@ -110,7 +110,7 @@ async function startServer() {
 
   app.post("/api/auth/login", (req, res) => {
     const { email, password } = req.body;
-    const user = db.prepare("SELECT * FROM users WHERE email = ? AND password = ?").get(email, password);
+    const user = db.prepare("SELECT * FROM users WHERE LOWER(email) = LOWER(?) AND password = ?").get(email.trim(), password);
     if (user) {
       res.json({ id: user.id, email: user.email, name: user.name });
     } else {
@@ -119,10 +119,19 @@ async function startServer() {
   });
 
   // Google OAuth Routes
+  const getRedirectUri = (req: express.Request) => {
+    if (process.env.APP_URL) {
+      return `${process.env.APP_URL.replace(/\/$/, "")}/auth/google/callback`;
+    }
+    return `${req.protocol}://${req.get("host")}/auth/google/callback`;
+  };
+
   app.get("/api/auth/google/url", (req, res) => {
     const rootUrl = "https://accounts.google.com/o/oauth2/v2/auth";
+    const redirect_uri = getRedirectUri(req);
+    
     const options = {
-      redirect_uri: `${req.protocol}://${req.get("host")}/auth/google/callback`,
+      redirect_uri,
       client_id: process.env.GOOGLE_CLIENT_ID!,
       access_type: "offline",
       response_type: "code",
@@ -139,7 +148,11 @@ async function startServer() {
 
   app.get("/auth/google/callback", async (req, res) => {
     const code = req.query.code as string;
-    const redirectUri = `${req.protocol}://${req.get("host")}/auth/google/callback`;
+    const redirectUri = getRedirectUri(req);
+
+    if (!code) {
+      return res.status(400).send("No code provided");
+    }
 
     try {
       // Exchange code for tokens
@@ -155,7 +168,14 @@ async function startServer() {
         }),
       });
 
-      const { access_token } = await tokenResponse.json();
+      const tokenData = await tokenResponse.json();
+      
+      if (!tokenResponse.ok) {
+        console.error("Token Exchange Error:", tokenData);
+        return res.status(500).send("Failed to exchange token");
+      }
+
+      const { access_token } = tokenData;
 
       // Get user info
       const userResponse = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
@@ -164,13 +184,17 @@ async function startServer() {
 
       const googleUser = await userResponse.json();
 
+      if (!googleUser.email) {
+        return res.status(400).send("Google account has no email");
+      }
+
       // Check if user exists, if not create
       let user = db.prepare("SELECT * FROM users WHERE email = ?").get(googleUser.email);
       
       if (!user) {
         const stmt = db.prepare("INSERT INTO users (email, name, password) VALUES (?, ?, ?)");
-        const result = stmt.run(googleUser.email, googleUser.name, "google-auth-no-password");
-        user = { id: result.lastInsertRowid, email: googleUser.email, name: googleUser.name };
+        const result = stmt.run(googleUser.email, googleUser.name || googleUser.email.split('@')[0], "google-auth-no-password");
+        user = { id: result.lastInsertRowid, email: googleUser.email, name: googleUser.name || googleUser.email.split('@')[0] };
       }
 
       // Send success message to parent window and close popup

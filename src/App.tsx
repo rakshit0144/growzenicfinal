@@ -189,21 +189,21 @@ const LandingPage = () => {
       <AnimatedBackground />
       
       {/* Hero Section */}
-      <section className="relative pt-48 pb-32 px-8 overflow-hidden">
+      <section className="relative pt-32 md:pt-48 pb-20 md:pb-32 px-6 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="max-w-3xl">
               <Reveal>
-                <div className="flex items-center gap-3 mb-8">
-                  <span className="w-8 h-px bg-indigo-500" />
-                  <span className="text-indigo-400 text-xs font-bold uppercase tracking-[0.3em]">
+                <div className="flex items-center gap-3 mb-6 md:mb-8">
+                  <span className="w-6 md:w-8 h-px bg-indigo-500" />
+                  <span className="text-indigo-400 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">
                     Global Creative Post-Production
                   </span>
                 </div>
               </Reveal>
               
               <Reveal delay={0.1}>
-                <h1 className="text-7xl md:text-[120px] font-bold tracking-tighter leading-[0.8] mb-12">
+                <h1 className="text-5xl md:text-7xl lg:text-[120px] font-bold tracking-tighter leading-[0.9] md:leading-[0.8] mb-8 md:mb-12">
                   Post <br />
                   <span className="text-white/20">Production</span> <br />
                   <span className="italic font-light">Refined.</span>
@@ -211,20 +211,20 @@ const LandingPage = () => {
               </Reveal>
 
               <Reveal delay={0.2}>
-                <p className="text-xl md:text-2xl text-gray-400 mb-14 max-w-xl leading-relaxed font-light">
+                <p className="text-lg md:text-2xl text-gray-400 mb-10 md:mb-14 max-w-xl leading-relaxed font-light">
                   We partner with world-class creators and brands to deliver cinematic video editing that scales with your ambition.
                 </p>
               </Reveal>
 
               <Reveal delay={0.3}>
-                <div className="flex flex-wrap gap-6">
-                  <Link to="/register" className="group bg-white text-black px-12 py-6 rounded-full font-bold text-lg hover:bg-indigo-600 hover:text-white transition-all duration-500 flex items-center gap-3 shadow-2xl">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
+                  <Link to="/register" className="group bg-white text-black px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-base md:text-lg hover:bg-indigo-600 hover:text-white transition-all duration-500 flex items-center justify-center gap-3 shadow-2xl">
                     Start Collaboration
                     <motion.div animate={{ x: [0, 5, 0] }} transition={{ repeat: Infinity, duration: 1.5 }}>
-                      <ChevronRight size={22} />
+                      <ChevronRight size={20} />
                     </motion.div>
                   </Link>
-                  <Link to="/#portfolio" className="group border border-white/10 px-12 py-6 rounded-full font-bold text-lg hover:bg-white/5 hover:border-white/30 transition-all duration-500">
+                  <Link to="/#portfolio" className="group border border-white/10 px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-base md:text-lg hover:bg-white/5 hover:border-white/30 transition-all duration-500 text-center">
                     View Showreel
                   </Link>
                 </div>
@@ -232,7 +232,7 @@ const LandingPage = () => {
             </div>
 
             <Reveal delay={0.4} width="100%">
-              <div className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group">
+              <div className="relative aspect-square rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl group">
                 <img 
                   src="https://picsum.photos/seed/creative/1200/1200" 
                   alt="Creative Studio" 
@@ -251,28 +251,28 @@ const LandingPage = () => {
       </section>
 
       {/* Trusted By */}
-      <section className="py-20 border-y border-white/5 bg-white/[0.01]">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-12 text-xs font-bold uppercase tracking-[0.4em] text-gray-500">Trusted by industry leaders</div>
-          <div className="flex flex-wrap justify-center items-center gap-16 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+      <section className="py-12 md:py-20 border-y border-white/5 bg-white/[0.01]">
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="text-center mb-8 md:mb-12 text-[10px] md:text-xs font-bold uppercase tracking-[0.4em] text-gray-500">Trusted by industry leaders</div>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
             {['Google', 'Netflix', 'Spotify', 'Adobe', 'YouTube'].map(brand => (
-              <div key={brand} className="text-2xl font-bold tracking-tighter">{brand}</div>
+              <div key={brand} className="text-xl md:text-2xl font-bold tracking-tighter">{brand}</div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Process */}
-      <section id="process" className="py-40 px-8">
+      <section id="process" className="py-24 md:py-40 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="mb-24 text-center">
-              <h2 className="text-5xl font-bold mb-6 tracking-tight">How We Scale Your Content</h2>
-              <p className="text-gray-400 text-lg max-w-xl mx-auto font-light">A streamlined workflow designed for high-volume post-production.</p>
+            <div className="mb-16 md:mb-24 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">How We Scale Your Content</h2>
+              <p className="text-gray-400 text-base md:text-lg max-w-xl mx-auto font-light">A streamlined workflow designed for high-volume post-production.</p>
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
               { step: '01', title: 'Upload', desc: 'Share your raw footage via our secure dashboard.' },
               { step: '02', title: 'Strategy', desc: 'We assign a lead editor to match your brand style.' },
@@ -280,10 +280,10 @@ const LandingPage = () => {
               { step: '04', title: 'Delivery', desc: 'Review and download your high-quality assets.' },
             ].map((item, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <div className="relative p-10 rounded-[2rem] bg-white/[0.02] border border-white/5 h-full group hover:bg-white/[0.04] transition-all duration-500">
-                  <div className="text-5xl font-black text-white/5 mb-8 group-hover:text-indigo-500/20 transition-colors">{item.step}</div>
-                  <h3 className="text-xl font-bold mb-4 tracking-tight">{item.title}</h3>
-                  <p className="text-gray-500 leading-relaxed text-sm font-light">{item.desc}</p>
+                <div className="relative p-8 md:p-10 rounded-[1.5rem] md:rounded-[2rem] bg-white/[0.02] border border-white/5 h-full group hover:bg-white/[0.04] transition-all duration-500">
+                  <div className="text-4xl md:text-5xl font-black text-white/5 mb-6 md:mb-8 group-hover:text-indigo-500/20 transition-colors">{item.step}</div>
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 tracking-tight">{item.title}</h3>
+                  <p className="text-gray-500 leading-relaxed text-xs md:text-sm font-light">{item.desc}</p>
                 </div>
               </Reveal>
             ))}
@@ -293,31 +293,31 @@ const LandingPage = () => {
 
 
       {/* Testimonials */}
-      <section className="py-40 px-8">
+      <section className="py-24 md:py-40 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <Reveal>
-            <div className="mb-24 text-center">
-              <h2 className="text-5xl font-bold mb-6 tracking-tight">Client Perspectives</h2>
-              <p className="text-gray-400 text-lg max-w-xl mx-auto font-light">Join the ranks of creators who have transformed their production value with Growzenic.</p>
+            <div className="mb-16 md:mb-24 text-center">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-6 tracking-tight">Client Perspectives</h2>
+              <p className="text-gray-400 text-base md:text-lg max-w-xl mx-auto font-light">Join the ranks of creators who have transformed their production value with Growzenic.</p>
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {[
               { name: 'Alex Rivera', role: 'Tech YouTuber', text: 'Growzenic turned my raw 2-hour streams into 15-minute high-retention masterpieces. My views increased by 40% in two months.' },
               { name: 'Sarah Chen', role: 'Agency Director', text: 'The turnaround time is unbelievable. We can now offer our clients premium video services without the overhead of a full-time team.' },
               { name: 'Marcus Thorne', role: 'Brand Manager', text: 'Professional, cinematic, and consistent. They understand our brand voice better than any freelancer we’ve ever hired.' },
             ].map((t, i) => (
               <Reveal key={i} delay={i * 0.1}>
-                <div className="p-10 rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all duration-500">
-                  <p className="text-lg text-gray-300 mb-8 font-light italic">"{t.text}"</p>
+                <div className="p-8 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all duration-500">
+                  <p className="text-base md:text-lg text-gray-300 mb-6 md:mb-8 font-light italic">"{t.text}"</p>
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center font-bold text-indigo-400">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-500/20 flex items-center justify-center font-bold text-indigo-400 text-sm md:text-base">
                       {t.name[0]}
                     </div>
                     <div>
-                      <div className="font-bold">{t.name}</div>
-                      <div className="text-xs text-gray-500 uppercase tracking-widest">{t.role}</div>
+                      <div className="font-bold text-sm md:text-base">{t.name}</div>
+                      <div className="text-[10px] md:text-xs text-gray-500 uppercase tracking-widest">{t.role}</div>
                     </div>
                   </div>
                 </div>
@@ -328,21 +328,21 @@ const LandingPage = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-40 px-8 bg-white/[0.01]">
+      <section className="py-24 md:py-40 px-6 md:px-8 bg-white/[0.01]">
         <div className="max-w-4xl mx-auto">
           <Reveal>
-            <h2 className="text-5xl font-bold mb-16 text-center tracking-tight">Common Inquiries</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-12 md:mb-16 text-center tracking-tight">Common Inquiries</h2>
           </Reveal>
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {[
               { q: 'What is the typical turnaround time?', a: 'Our standard turnaround is 48 hours for most projects. Professional and Enterprise plans offer 24-hour delivery.' },
               { q: 'How do I share my footage?', a: 'Once you register, you can upload footage directly to our secure dashboard or share links from Google Drive, Dropbox, or Frame.io.' },
               { q: 'Can I request specific editing styles?', a: 'Absolutely. During the onboarding process, we analyze your brand style and assign editors who specialize in your specific niche.' },
             ].map((faq, i) => (
               <Reveal key={i} delay={i * 0.1} width="100%">
-                <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-white/10 transition-all duration-300">
-                  <h3 className="text-xl font-bold mb-4">{faq.q}</h3>
-                  <p className="text-gray-400 font-light leading-relaxed">{faq.a}</p>
+                <div className="p-6 md:p-8 rounded-2xl md:rounded-3xl border border-white/5 bg-white/[0.02] hover:border-white/10 transition-all duration-300">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">{faq.q}</h3>
+                  <p className="text-gray-400 text-sm md:text-base font-light leading-relaxed">{faq.a}</p>
                 </div>
               </Reveal>
             ))}
@@ -351,13 +351,13 @@ const LandingPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-40 px-8">
+      <section className="py-24 md:py-40 px-6 md:px-8">
         <Reveal width="100%">
-          <div className="max-w-6xl mx-auto bg-white rounded-[4rem] p-20 md:p-32 text-center relative overflow-hidden group">
+          <div className="max-w-6xl mx-auto bg-white rounded-[2rem] md:rounded-[4rem] p-12 md:p-32 text-center relative overflow-hidden group">
             <div className="absolute inset-0 bg-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
             <div className="relative z-10 transition-colors duration-1000 group-hover:text-white text-black">
-              <h2 className="text-5xl md:text-8xl font-bold mb-12 leading-tight tracking-tighter">Let's build something <br /> extraordinary.</h2>
-              <Link to="/register" className="inline-block bg-black text-white px-14 py-7 rounded-full font-bold text-xl hover:scale-105 transition-all duration-500 shadow-2xl group-hover:bg-white group-hover:text-black">
+              <h2 className="text-3xl md:text-8xl font-bold mb-8 md:mb-12 leading-tight tracking-tighter">Let's build something <br className="hidden md:block" /> extraordinary.</h2>
+              <Link to="/register" className="inline-block bg-black text-white px-10 md:px-14 py-5 md:py-7 rounded-full font-bold text-base md:text-xl hover:scale-105 transition-all duration-500 shadow-2xl group-hover:bg-white group-hover:text-black">
                 Start Your Project
               </Link>
             </div>
@@ -404,7 +404,7 @@ const AuthPage = ({ type }: { type: 'login' | 'register' }) => {
         const res = await fetch('/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
         });
         const data = await res.json();
         if (res.ok) {
@@ -423,7 +423,7 @@ const AuthPage = ({ type }: { type: 'login' | 'register' }) => {
         const res = await fetch('/api/auth/register-request', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, password, name }),
+          body: JSON.stringify({ email: email.trim().toLowerCase(), password, name: name.trim() }),
         });
         const data = await res.json();
         if (res.ok) {
@@ -505,19 +505,19 @@ const AuthPage = ({ type }: { type: 'login' | 'register' }) => {
   };
 
   return (
-    <div className="min-h-screen pt-40 pb-20 px-8 flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen pt-24 md:pt-40 pb-20 px-4 md:px-8 flex items-center justify-center relative overflow-hidden">
       <AnimatedBackground />
       <div className="w-full max-w-xl relative z-10">
         <Reveal width="100%">
-          <div className="bg-white/[0.02] border border-white/5 backdrop-blur-3xl p-12 md:p-16 rounded-[3rem] shadow-2xl">
-            <div className="text-center mb-12">
-              <div className="flex justify-center mb-8">
+          <div className="bg-white/[0.02] border border-white/5 backdrop-blur-3xl p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-2xl">
+            <div className="text-center mb-10 md:mb-12">
+              <div className="flex justify-center mb-6 md:mb-8 scale-90 md:scale-100">
                 <Logo />
               </div>
-              <h2 className="text-4xl font-bold tracking-tight mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 md:mb-4">
                 {type === 'login' ? 'Welcome Back' : step === 'otp' ? 'Verify Email' : 'Create Account'}
               </h2>
-              <p className="text-gray-400 font-light">
+              <p className="text-gray-400 text-sm md:text-base font-light">
                 {type === 'login' ? 'Access your creative dashboard' : step === 'otp' ? `We've sent a code to ${email}` : 'Start your post-production journey'}
               </p>
             </div>
@@ -719,14 +719,14 @@ const CuteAI = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-[300] flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[300] flex flex-col items-end">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20, transformOrigin: 'bottom right' }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="w-[380px] h-[550px] bg-[#0a0a0a] border border-white/10 rounded-[2.5rem] shadow-2xl flex flex-col overflow-hidden mb-6"
+            className="w-[calc(100vw-2rem)] sm:w-[380px] h-[500px] md:h-[550px] bg-[#0a0a0a] border border-white/10 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl flex flex-col overflow-hidden mb-4 md:mb-6"
           >
             {/* Header */}
             <div className="p-6 border-b border-white/5 bg-white/[0.02] flex items-center justify-between">
@@ -865,43 +865,43 @@ const Dashboard = ({ user }: { user: User }) => {
   };
 
   return (
-    <div className="min-h-screen pt-40 pb-20 px-8 relative overflow-hidden">
+    <div className="min-h-screen pt-24 md:pt-40 pb-20 px-4 md:px-8 relative overflow-hidden">
       <AnimatedBackground />
       <div className="max-w-7xl mx-auto relative z-10">
         <Reveal width="100%">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-16">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12 md:mb-16">
             <div>
-              <h1 className="text-5xl font-bold tracking-tight mb-2">Creative Workspace</h1>
-              <p className="text-gray-400 font-light">Welcome back, {user.name}. Manage your post-production pipeline.</p>
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">Creative Workspace</h1>
+              <p className="text-gray-400 text-sm md:text-base font-light">Welcome back, {user.name}. Manage your post-production pipeline.</p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full lg:w-auto">
               <div className="bg-white/5 p-1 rounded-2xl flex items-center">
                 <button 
                   onClick={() => setActiveTab('projects')}
                   className={cn(
-                    "px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 flex items-center gap-2",
+                    "flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2",
                     activeTab === 'projects' ? "bg-white text-black shadow-lg" : "text-gray-500 hover:text-white"
                   )}
                 >
-                  <Layout size={16} />
+                  <Layout size={14} className="md:w-4 md:h-4" />
                   Projects
                 </button>
                 <button 
                   onClick={() => setActiveTab('billing')}
                   className={cn(
-                    "px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300 flex items-center gap-2",
+                    "flex-1 sm:flex-none px-4 md:px-6 py-3 rounded-xl text-xs md:text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2",
                     activeTab === 'billing' ? "bg-white text-black shadow-lg" : "text-gray-500 hover:text-white"
                   )}
                 >
-                  <CreditCard size={16} />
+                  <CreditCard size={14} className="md:w-4 md:h-4" />
                   Billing
                 </button>
               </div>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-indigo-600 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-indigo-500 transition-all duration-500 shadow-xl"
+                className="bg-indigo-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-indigo-500 transition-all duration-500 shadow-xl"
               >
-                <Plus size={20} />
+                <Plus size={18} className="md:w-5 md:h-5" />
                 New Project
               </button>
             </div>
@@ -1100,33 +1100,33 @@ const Dashboard = ({ user }: { user: User }) => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl max-h-[90vh] bg-[#0a0a0a] border border-white/10 rounded-[3rem] shadow-2xl overflow-hidden flex flex-col"
+              className="relative w-full max-w-2xl max-h-[90vh] bg-[#0a0a0a] border border-white/10 rounded-[2rem] md:rounded-[3rem] shadow-2xl overflow-hidden flex flex-col"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500" />
               
               {/* Modal Header */}
-              <div className="p-8 md:p-12 pb-4 flex items-center justify-between">
+              <div className="p-6 md:p-12 pb-4 flex items-center justify-between">
                 <div>
-                  <h2 className="text-4xl font-bold tracking-tight">New Project Request</h2>
-                  <p className="text-gray-500 mt-2 font-light">Tell us about your vision and provide the necessary assets.</p>
+                  <h2 className="text-2xl md:text-4xl font-bold tracking-tight">New Project Request</h2>
+                  <p className="text-gray-500 mt-1 md:mt-2 text-xs md:text-base font-light">Tell us about your vision and provide assets.</p>
                 </div>
                 <button 
                   onClick={() => setIsModalOpen(false)}
                   className="text-gray-500 hover:text-white transition-colors"
                 >
-                  <X size={24} />
+                  <X size={20} className="md:w-6 md:h-6" />
                 </button>
               </div>
 
               {/* Modal Body (Scrollable) */}
-              <div className="flex-grow overflow-y-auto p-8 md:p-12 pt-4 space-y-8">
-                <form id="project-form" onSubmit={handleCreateProject} className="space-y-8">
+              <div className="flex-grow overflow-y-auto p-6 md:p-12 pt-4 space-y-6 md:space-y-8">
+                <form id="project-form" onSubmit={handleCreateProject} className="space-y-6 md:space-y-8">
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-4">Project Title</label>
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500 ml-4">Project Title</label>
                     <input
                       type="text"
                       required
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 focus:outline-none focus:border-indigo-500/50 transition-colors text-sm md:text-base"
                       placeholder="e.g. Summer Travel Vlog 2024"
                       value={newProject.title}
                       onChange={(e) => setNewProject({ ...newProject, title: e.target.value })}
@@ -1134,11 +1134,11 @@ const Dashboard = ({ user }: { user: User }) => {
                   </div>
                   
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-4">Description & Style Notes</label>
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500 ml-4">Description & Style Notes</label>
                     <textarea
                       required
-                      rows={4}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-indigo-500/50 transition-colors resize-none"
+                      rows={3}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 focus:outline-none focus:border-indigo-500/50 transition-colors resize-none text-sm md:text-base"
                       placeholder="Describe the mood, pace, and any specific requirements..."
                       value={newProject.description}
                       onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
@@ -1146,12 +1146,12 @@ const Dashboard = ({ user }: { user: User }) => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-4 flex items-center gap-2">
-                      <LinkIcon size={14} /> Reference Reel (Optional)
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500 ml-4 flex items-center gap-2">
+                      <LinkIcon size={12} className="md:w-3.5 md:h-3.5" /> Reference Reel (Optional)
                     </label>
                     <input
                       type="url"
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-indigo-500/50 transition-colors"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 focus:outline-none focus:border-indigo-500/50 transition-colors text-sm md:text-base"
                       placeholder="Instagram/TikTok/YouTube"
                       value={newProject.referenceLink}
                       onChange={(e) => setNewProject({ ...newProject, referenceLink: e.target.value })}
@@ -1159,18 +1159,18 @@ const Dashboard = ({ user }: { user: User }) => {
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-gray-500 ml-4 flex items-center gap-2">
-                      <Mic size={14} /> Audio Description / Note
+                    <label className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-500 ml-4 flex items-center gap-2">
+                      <Mic size={12} className="md:w-3.5 md:h-3.5" /> Audio Description / Note
                     </label>
                     <div className="relative">
                       <textarea
                         rows={2}
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 focus:outline-none focus:border-indigo-500/50 transition-colors resize-none"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl md:rounded-2xl px-5 md:px-6 py-3 md:py-4 focus:outline-none focus:border-indigo-500/50 transition-colors resize-none text-sm md:text-base"
                         placeholder="Add an audio note or detailed verbal instructions..."
                         value={newProject.audioNote}
                         onChange={(e) => setNewProject({ ...newProject, audioNote: e.target.value })}
                       />
-                      <div className="absolute right-4 bottom-4 text-[10px] text-gray-600 font-bold uppercase tracking-widest">
+                      <div className="absolute right-4 bottom-4 text-[8px] md:text-[10px] text-gray-600 font-bold uppercase tracking-widest">
                         Optional
                       </div>
                     </div>
@@ -1179,13 +1179,13 @@ const Dashboard = ({ user }: { user: User }) => {
               </div>
 
               {/* Modal Footer */}
-              <div className="p-8 md:p-12 bg-white/[0.02] border-t border-white/5">
+              <div className="p-6 md:p-12 bg-white/[0.02] border-t border-white/5">
                 <button
                   type="submit"
                   form="project-form"
-                  className="w-full bg-white text-black py-5 rounded-2xl font-bold text-lg hover:bg-indigo-600 hover:text-white transition-all duration-500 shadow-xl flex items-center justify-center gap-3"
+                  className="w-full bg-white text-black py-4 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg hover:bg-indigo-600 hover:text-white transition-all duration-500 shadow-xl flex items-center justify-center gap-3"
                 >
-                  Submit Request <ChevronRight size={20} />
+                  Submit Request <ChevronRight size={18} className="md:w-5 md:h-5" />
                 </button>
               </div>
             </motion.div>
